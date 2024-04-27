@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dteopf2fcyqlv"]
 
-[ext_resource type="Theme" path="res://mug.theme" id="1_gu7e8"]
+[ext_resource type="Theme" uid="uid://swk3vlk2r483" path="res://mug.theme" id="1_gu7e8"]
 
 [node name="mug" type="Control"]
 layout_mode = 3
