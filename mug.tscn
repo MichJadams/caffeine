@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dteopf2fcyqlv"]
+[gd_scene load_steps=4 format=3 uid="uid://dteopf2fcyqlv"]
 
 [ext_resource type="Theme" uid="uid://swk3vlk2r483" path="res://mug.theme" id="1_gu7e8"]
+[ext_resource type="Texture2D" uid="uid://cekrb3h72tbuh" path="res://mug_mask.svg" id="1_guh8v"]
+[ext_resource type="Texture2D" uid="uid://bhdpads0uwugg" path="res://mug.svg" id="2_u1msa"]
 
 [node name="mug" type="Control"]
 layout_mode = 3
@@ -10,9 +12,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VSlider" type="VSlider" parent="."]
+[node name="CoffeeMask" type="TextureRect" parent="."]
+clip_children = 1
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+texture = ExtResource("1_guh8v")
+
+[node name="CoffeSlider" type="VSlider" parent="CoffeeMask"]
+z_as_relative = false
 layout_mode = 1
-offset_right = 497.0
-offset_bottom = 450.0
+offset_right = 500.0
+offset_bottom = 500.0
 theme = ExtResource("1_gu7e8")
 value = 50.0
+
+[node name="MugSlice" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+mouse_filter = 2
+texture = ExtResource("2_u1msa")
