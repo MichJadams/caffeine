@@ -33,10 +33,11 @@ var selected_drink = {
 		}
 func get_drink_name():
 	var coffe_slider = $mug/CoffeeMask/CoffeSlider
+
 	var thermometer = $Thermometer/Thermometer
 	var input_heat = thermometer.value
 	var input_espresso_percentage = coffe_slider.value
-
+	
 	for heat_level_band in drink_names: 
 		for drink in heat_level_band: 
 			if input_heat >= drink.minimum_heat and input_espresso_percentage >= drink.espresso:
@@ -46,8 +47,9 @@ func get_drink_name():
 func _on_thermometer_value_changed(heat_level):
 	var drink_name = get_drink_name()
 	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-	
-func _on_coffe_slider_value_changed(espresso_level):
+
+func _on_coffe_slider_value_changed(value):
 	var drink_name = get_drink_name()
 	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-	
+
+

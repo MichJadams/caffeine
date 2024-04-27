@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_hoi4c"]
 [ext_resource type="PackedScene" uid="uid://dwps1q5ya7yib" path="res://thermometer.tscn" id="2_d8qp6"]
-[ext_resource type="PackedScene" uid="uid://dteopf2fcyqlv" path="res://mug/mug.tscn" id="3_k23r1"]
+[ext_resource type="PackedScene" uid="uid://dteopf2fcyqlv" path="res://mug/mug.tscn" id="3_70ub0"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hoi4c")
@@ -17,11 +17,11 @@ offset_top = 537.0
 offset_right = 913.0
 offset_bottom = 595.0
 
-[node name="mug" parent="." instance=ExtResource("3_k23r1")]
-offset_left = 316.0
-offset_top = -11.0
-offset_right = 316.0
-offset_bottom = -11.0
+[node name="mug" parent="." instance=ExtResource("3_70ub0")]
+offset_left = 315.0
+offset_top = -42.0
+offset_right = 315.0
+offset_bottom = -42.0
 
 [connection signal="value_changed" from="Thermometer/Thermometer" to="." method="_on_thermometer_value_changed"]
 [connection signal="value_changed" from="mug/CoffeeMask/CoffeSlider" to="." method="_on_coffe_slider_value_changed"]
