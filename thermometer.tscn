@@ -1,9 +1,24 @@
-[gd_scene format=3 uid="uid://bigopc0pv513c"]
+[gd_scene load_steps=2 format=3 uid="uid://dwps1q5ya7yib"]
+
+[ext_resource type="Theme" uid="uid://xv1p2xrxni7u" path="res://thermometer.theme" id="1_upvnv"]
 
 [node name="Thermometer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Thermometer" type="HSlider" parent="."]
+layout_mode = 1
+offset_right = 676.0
+offset_bottom = 388.0
+theme = ExtResource("1_upvnv")
+min_value = 1.0
+value = 1.0
+tick_count = 50
