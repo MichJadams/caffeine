@@ -46,12 +46,14 @@ func get_drink_name():
 				selected_drink = drink
 	return selected_drink.name
 
+func update_drink():
+	var drink_name = get_drink_name()
+	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
+	$Label/Box/DrinkName.text = selected_drink.name
+
 func _on_thermometer_value_changed(heat_level):
-	var drink_name = get_drink_name()
-	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-
+	update_drink()
+	
 func _on_coffe_slider_value_changed(value):
-	var drink_name = get_drink_name()
-	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-
+	update_drink()
 
