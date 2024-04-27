@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhdpads0uwugg"
-path="res://.godot/imported/mug.svg-c71a110e6a6a8803e495b50edee07d16.ctex"
+uid="uid://cekrb3h72tbuh"
+path="res://.godot/imported/mug_mask.svg-ba2b993e672bf1f79327410f37c94540.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mug.svg"
-dest_files=["res://.godot/imported/mug.svg-c71a110e6a6a8803e495b50edee07d16.ctex"]
+source_file="res://mug/mug_mask.svg"
+dest_files=["res://.godot/imported/mug_mask.svg-ba2b993e672bf1f79327410f37c94540.ctex"]
 
 [params]
 
