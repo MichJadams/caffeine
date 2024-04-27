@@ -38,6 +38,8 @@ func get_drink_name():
 	var input_heat = thermometer.value
 	var input_espresso_percentage = coffe_slider.value
 	
+	print("input heat:", input_heat, "input_espresso", input_espresso_percentage)
+	
 	for heat_level_band in drink_names: 
 		for drink in heat_level_band: 
 			if input_heat >= drink.minimum_heat and input_espresso_percentage >= drink.espresso:

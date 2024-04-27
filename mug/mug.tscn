@@ -22,8 +22,9 @@ texture = ExtResource("1_guh8v")
 [node name="CoffeSlider" type="VSlider" parent="CoffeeMask"]
 z_as_relative = false
 layout_mode = 1
+offset_top = 101.0
 offset_right = 500.0
-offset_bottom = 500.0
+offset_bottom = 397.0
 theme = ExtResource("1_gu7e8")
 value = 50.0
 
