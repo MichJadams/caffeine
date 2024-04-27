@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://bu0pl0mgpqigq"]
+[gd_scene load_steps=3 format=3 uid="uid://bu0pl0mgpqigq"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hoi4c"]
+[ext_resource type="PackedScene" uid="uid://dwps1q5ya7yib" path="res://thermometer.tscn" id="2_d8qp6"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_hoi4c")
+
+[node name="Thermometer" parent="." instance=ExtResource("2_d8qp6")]
+
+[connection signal="value_changed" from="Thermometer/Thermometer" to="." method="_on_thermometer_value_changed"]
+
+[editable path="Thermometer"]
