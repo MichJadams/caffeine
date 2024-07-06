@@ -61,7 +61,7 @@ func update_drink():
 	# steam
 	var thermometer = $Thermometer/Thermometer
 	var percent = remap(thermometer.value, 100, 250, 0, 1)
-	print(percent)
+	# print(percent)
 	$mug/Steam.amount_ratio = percent
 
 func _on_thermometer_value_changed(heat_level):
