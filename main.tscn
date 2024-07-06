@@ -19,10 +19,15 @@ offset_right = 913.0
 offset_bottom = 595.0
 
 [node name="mug" parent="." instance=ExtResource("3_70ub0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 315.0
 offset_top = -42.0
 offset_right = 315.0
 offset_bottom = -42.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Label" parent="." instance=ExtResource("4_gwc4e")]
 offset_left = 409.0
