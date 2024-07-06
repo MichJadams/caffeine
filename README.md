@@ -4,15 +4,15 @@ A lill coffee naming application... ☕
 # TODO
 
 - [ ] More coffee names
-- [ ] A background
+- [x] A background
 - [x] Handle for the mug
-- [ ] Choose font for name
+- [x] Choose font for name
 - [ ] Music
 - [ ] SFX
 - [x] Particles
-- [ ] Temp units
+- [x] Temp units
 - [ ] Label current coffee makeup
-- [ ] Better input method (csv)
+- [x] Better input method (csv)
 
 ## DLC
 
