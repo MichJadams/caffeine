@@ -55,9 +55,40 @@ offset_right = 424.0
 offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("6_su2oc")
 
+[node name="PercentageLabel" parent="." instance=ExtResource("4_gwc4e")]
+offset_left = 409.0
+offset_top = 418.0
+offset_right = 409.0
+offset_bottom = 418.0
+
+[node name="DrinkName" parent="PercentageLabel" index="0"]
+offset_left = 448.0
+offset_top = -5.0
+offset_right = 646.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("6_su2oc")
+text = "100%"
+
+[node name="TemperatureLabel" parent="." instance=ExtResource("4_gwc4e")]
+offset_left = 409.0
+offset_top = 418.0
+offset_right = 409.0
+offset_bottom = 418.0
+
+[node name="DrinkName" parent="TemperatureLabel" index="0"]
+offset_left = -235.0
+offset_top = -10.0
+offset_right = -86.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("6_su2oc")
+text = "75
+"
+
 [connection signal="value_changed" from="Thermometer/Thermometer" to="." method="_on_thermometer_value_changed"]
 [connection signal="value_changed" from="mug/CoffeeMask/CoffeSlider" to="." method="_on_coffe_slider_value_changed"]
 
 [editable path="Thermometer"]
 [editable path="mug"]
 [editable path="Label"]
+[editable path="PercentageLabel"]
+[editable path="TemperatureLabel"]
