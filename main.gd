@@ -2,40 +2,6 @@ extends Node2D
 
 var all_drinks = []
 
-const drink_names = [
-	[
-		{
-			"minimum_heat": 130,
-			"espresso": 0, 
-			"name": "cappuccino",
-		},
-		{
-			"minimum_heat": 0,
-			"espresso": 98, 
-			"name": "Shot of Espresso",
-		}
-	],
-	[
-		{
-			"minimum_heat": 140,
-			"espresso": 70, 
-			"name": "macchiato",
-		}
-	],
-	[ 
-		{
-			"minimum_heat": 160,
-			"espresso": 0, 
-			"name": "Latte",
-		},
-		{
-			"minimum_heat": 0,
-			"espresso": 98, 
-			"name": "Shot of Espresso",
-		}
-	]
-]
-
 func get_drink():
 	var coffe_slider = $mug/CoffeeMask/CoffeSlider
 	var thermometer = $Thermometer/Thermometer
