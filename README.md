@@ -3,16 +3,16 @@ A lill coffee naming application... ☕
 
 # TODO
 
-- More coffee names
-- A background
-- Handle for the mug
-- Choose font for name
-- Music
-- SFX
-- Particles
-- Temp units
-- Label current coffee makeup
-- Better input method (csv)
+- [ ] More coffee names
+- [ ] A background
+- [x] Handle for the mug
+- [ ] Choose font for name
+- [ ] Music
+- [ ] SFX
+- [x] Particles
+- [ ] Temp units
+- [ ] Label current coffee makeup
+- [ ] Better input method (csv)
 
 ## DLC
 
