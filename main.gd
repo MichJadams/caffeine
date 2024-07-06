@@ -1,5 +1,7 @@
 extends Node2D
 
+var all_drinks = []
+
 const drink_names = [
 	[
 		{
@@ -33,30 +35,38 @@ const drink_names = [
 		}
 	]
 ]
-var selected_drink = {
-			"minimum_heat": 0,
-			"espresso": 0, 
-			"name": "nothing!",
-		}
-		
-func get_drink_name():
+
+func get_drink():
 	var coffe_slider = $mug/CoffeeMask/CoffeSlider
 	var thermometer = $Thermometer/Thermometer
 	var input_heat = thermometer.value
 	var input_espresso_percentage = coffe_slider.value
 	
-	print("input heat:", input_heat, "input_espresso", input_espresso_percentage)
+	print("input heat: ", input_heat, " input_espresso: ", input_espresso_percentage)
 	
-	for heat_level_band in drink_names: 
-		for drink in heat_level_band: 
-			if input_heat >= drink.minimum_heat and input_espresso_percentage >= drink.espresso:
-				selected_drink = drink
-	return selected_drink.name
+	var chosen = all_drinks.back() # milk
+	
+	# find closest espresso
+	for drink in all_drinks:
+		if input_espresso_percentage >= drink.minimum_espresso:
+			print("espresso candidate: ", drink)
+			if input_espresso_percentage - drink.minimum_espresso < input_espresso_percentage - chosen.minimum_espresso :
+				print(drink, " better than ", chosen)
+				chosen = drink
+	# find closest temp
+	for drink in all_drinks:
+		if input_heat >= drink.minimum_heat and drink.minimum_espresso == chosen.minimum_espresso:
+			print("heat candidate: ", drink)
+			if input_heat - drink.minimum_heat < input_heat - chosen.minimum_heat:
+				print(drink, " better than ", chosen)
+				chosen = drink
+	
+	return chosen
 
 func update_drink():
-	var drink_name = get_drink_name()
-	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-	$Label/DrinkName.text = selected_drink.name
+	var drink = get_drink()
+	print("selected: ", drink)
+	$Label/DrinkName.text = drink.name
 	
 	# steam
 	var thermometer = $Thermometer/Thermometer
@@ -70,3 +80,33 @@ func _on_thermometer_value_changed(heat_level):
 func _on_coffe_slider_value_changed(value):
 	update_drink()
 
+class Drink:
+	var name
+	var minimum_heat
+	var minimum_espresso
+	
+	func _init(name_: String, min_heat: int, min_esp: int):
+		name = name_
+		minimum_heat = min_heat
+		minimum_espresso = min_esp
+		
+	func _to_string():
+		return name + ": " + str(minimum_heat) + "/" + str(minimum_espresso)
+
+func load_coffee_data():
+	var file = FileAccess.open("res://data.csv", FileAccess.READ)
+	
+	# skip headers
+	file.get_csv_line()
+
+	var line = file.get_csv_line()
+	while line.size() > 1:
+		all_drinks.append(Drink.new(line[0], int(line[1]), int(line[2])))
+		line = file.get_csv_line()
+
+	all_drinks.append(Drink.new("Warm Milk", 0, 0))
+	for drink in all_drinks:
+		print(drink)
+
+func _ready():
+	load_coffee_data()

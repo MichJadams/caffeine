@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b15kwtrogwmbs"
+
+[deps]
+
+files=["res://data.minimum.translation", "res://data.espresso.translation"]
+
+source_file="res://data.csv"
+dest_files=["res://data.minimum.translation", "res://data.espresso.translation"]
+
+[params]
+
+compress=true
+delimiter=0
