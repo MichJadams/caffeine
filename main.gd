@@ -68,8 +68,15 @@ func update_drink():
 	print("selected: ", drink)
 	$Label/DrinkName.text = drink.name
 	
-	# steam
+	# input labels
+	var coffe_slider = $mug/CoffeeMask/CoffeSlider
 	var thermometer = $Thermometer/Thermometer
+	var input_heat = thermometer.value
+	var input_espresso_percentage = coffe_slider.value
+	$TemperatureLabel/DrinkName.text = str(input_heat) + "°"
+	$PercentageLabel/DrinkName.text = str(input_espresso_percentage) + "%"
+	
+	# steam
 	var percent = remap(thermometer.value, 100, 250, 0, 1)
 	# print(percent)
 	$mug/Steam.amount_ratio = percent
