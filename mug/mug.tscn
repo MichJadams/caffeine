@@ -39,7 +39,7 @@ radial_accel_max = 1.0
 radial_accel_curve = SubResource("CurveTexture_qb8b5")
 scale_min = 0.0
 scale_curve = SubResource("CurveTexture_8hq3q")
-color = Color(1, 1, 1, 0.14902)
+color = Color(0.93845, 0.93845, 0.93845, 0.309804)
 alpha_curve = SubResource("CurveTexture_2tce1")
 
 [node name="mug" type="Control"]
@@ -49,13 +49,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Steam" type="GPUParticles2D" parent="."]
-position = Vector2(238, 103)
-amount = 400
-process_material = SubResource("ParticleProcessMaterial_1ewaj")
-texture = ExtResource("4_ihwu2")
-lifetime = 10.0
 
 [node name="CoffeeMask" type="TextureRect" parent="."]
 clip_children = 1
@@ -79,3 +72,10 @@ offset_right = 500.0
 offset_bottom = 500.0
 mouse_filter = 2
 texture = ExtResource("2_u1msa")
+
+[node name="Steam" type="GPUParticles2D" parent="."]
+position = Vector2(238, 103)
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_1ewaj")
+texture = ExtResource("4_ihwu2")
+lifetime = 10.0
