@@ -16,8 +16,10 @@ grow_vertical = 2
 
 [node name="Thermometer" type="HSlider" parent="."]
 layout_mode = 1
-offset_right = 676.0
-offset_bottom = 67.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 678.0
+offset_bottom = 66.0
 theme = ExtResource("1_upvnv")
 min_value = 100.0
 max_value = 250.0

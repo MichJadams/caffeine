@@ -2,16 +2,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywfyy"]
 bg_color = Color(0.941176, 0.898039, 0.811765, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 6
 border_color = Color(0.294118, 0.180392, 0.180392, 1)
-border_blend = true
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
 
 [sub_resource type="Theme" id="Theme_0q3rg"]
 Label/colors/font_color = Color(0.294118, 0.180392, 0.176471, 1)
