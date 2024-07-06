@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu0pl0mgpqigq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hoi4c"]
-[ext_resource type="Texture2D" uid="uid://ce4rv7feb34pi" path="res://caffine_background.png" id="2_aqwog"]
 [ext_resource type="PackedScene" uid="uid://dwps1q5ya7yib" path="res://thermometer.tscn" id="2_d8qp6"]
+[ext_resource type="Texture2D" uid="uid://cttivqx5emypm" path="res://label/caffine_background_simple.png" id="2_ut2gh"]
 [ext_resource type="PackedScene" uid="uid://dteopf2fcyqlv" path="res://mug/mug.tscn" id="3_70ub0"]
 [ext_resource type="PackedScene" uid="uid://d26csm68tnnns" path="res://label/label.tscn" id="4_gwc4e"]
 
@@ -12,12 +12,12 @@
 script = ExtResource("1_hoi4c")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = -12.0
-offset_top = -7.0
-offset_right = 1191.0
-offset_bottom = 669.0
+offset_left = -78.0
+offset_top = -32.0
+offset_right = 1267.0
+offset_bottom = 714.0
 theme = SubResource("Theme_c3ijr")
-texture = ExtResource("2_aqwog")
+texture = ExtResource("2_ut2gh")
 
 [node name="Thermometer" parent="." instance=ExtResource("2_d8qp6")]
 offset_top = 6.0
@@ -49,9 +49,9 @@ offset_bottom = 418.0
 
 [node name="DrinkName" parent="Label" index="0"]
 offset_left = -15.0
-offset_top = -4.0
+offset_top = 8.0
 offset_right = 344.0
-offset_bottom = 109.0
+offset_bottom = 81.0
 
 [connection signal="value_changed" from="Thermometer/Thermometer" to="." method="_on_thermometer_value_changed"]
 [connection signal="value_changed" from="mug/CoffeeMask/CoffeSlider" to="." method="_on_coffe_slider_value_changed"]
