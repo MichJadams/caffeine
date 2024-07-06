@@ -1,8 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://dteopf2fcyqlv"]
+[gd_scene load_steps=12 format=3 uid="uid://dteopf2fcyqlv"]
 
 [ext_resource type="Theme" uid="uid://swk3vlk2r483" path="res://mug/mug.theme" id="1_gu7e8"]
 [ext_resource type="Texture2D" uid="uid://cekrb3h72tbuh" path="res://mug/mug_mask.svg" id="1_guh8v"]
 [ext_resource type="Texture2D" uid="uid://bhdpads0uwugg" path="res://mug/mug.svg" id="2_u1msa"]
+[ext_resource type="Texture2D" uid="uid://dqem1opgyhbr5" path="res://mug/steam_circle.svg" id="4_ihwu2"]
+
+[sub_resource type="Curve" id="Curve_w341n"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2tce1"]
+curve = SubResource("Curve_w341n")
+
+[sub_resource type="Curve" id="Curve_olouu"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 84.273), 0.0, 0.0, 0, 0, Vector2(0.130435, -43.0267), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qb8b5"]
+curve = SubResource("Curve_olouu")
+
+[sub_resource type="Curve" id="Curve_4aakp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.459941), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8hq3q"]
+curve = SubResource("Curve_4aakp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ewaj"]
+lifetime_randomness = 0.9
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(120, 1, 1)
+angular_velocity_max = 100.0
+gravity = Vector3(0, -48, 0)
+radial_accel_max = 1.0
+radial_accel_curve = SubResource("CurveTexture_qb8b5")
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_8hq3q")
+color = Color(1, 1, 1, 0.14902)
+alpha_curve = SubResource("CurveTexture_2tce1")
 
 [node name="mug" type="Control"]
 layout_mode = 3
@@ -11,6 +49,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Steam" type="GPUParticles2D" parent="."]
+position = Vector2(238, 103)
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_1ewaj")
+texture = ExtResource("4_ihwu2")
+lifetime = 10.0
 
 [node name="CoffeeMask" type="TextureRect" parent="."]
 clip_children = 1

@@ -57,6 +57,12 @@ func update_drink():
 	var drink_name = get_drink_name()
 	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
 	$Label/DrinkName.text = selected_drink.name
+	
+	# steam
+	var thermometer = $Thermometer/Thermometer
+	var percent = remap(thermometer.value, 100, 250, 0, 1)
+	# print(percent)
+	$mug/Steam.amount_ratio = percent
 
 func _on_thermometer_value_changed(heat_level):
 	update_drink()
