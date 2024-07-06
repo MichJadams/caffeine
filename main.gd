@@ -13,6 +13,13 @@ const drink_names = [
 			"name": "Shot of Espresso",
 		}
 	],
+	[
+		{
+			"minimum_heat": 140,
+			"espresso": 70, 
+			"name": "macchiato",
+		}
+	],
 	[ 
 		{
 			"minimum_heat": 160,
@@ -31,9 +38,9 @@ var selected_drink = {
 			"espresso": 0, 
 			"name": "nothing!",
 		}
+		
 func get_drink_name():
 	var coffe_slider = $mug/CoffeeMask/CoffeSlider
-
 	var thermometer = $Thermometer/Thermometer
 	var input_heat = thermometer.value
 	var input_espresso_percentage = coffe_slider.value
@@ -49,7 +56,7 @@ func get_drink_name():
 func update_drink():
 	var drink_name = get_drink_name()
 	print("heat", selected_drink.minimum_heat, "espresso: ", selected_drink.espresso, "name:", selected_drink.name)
-	$Label/Box/DrinkName.text = selected_drink.name
+	$Label/DrinkName.text = selected_drink.name
 
 func _on_thermometer_value_changed(heat_level):
 	update_drink()
