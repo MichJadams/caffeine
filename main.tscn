@@ -54,6 +54,7 @@ offset_top = -9.0
 offset_right = 424.0
 offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("6_su2oc")
+text = "macchiatto"
 
 [node name="PercentageLabel" parent="." instance=ExtResource("4_gwc4e")]
 offset_left = 409.0

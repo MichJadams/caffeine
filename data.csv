@@ -1,5 +1,7 @@
 name,minimum_heat,espresso
 Shot of Espresso,0,98
 Macchiato,140,70
-Latte,160,0
-Cappuccino,130,0
+Latte,160,25
+Cappuccino,130,25
+Steamer ,130,0
+Flat White ,130,40
